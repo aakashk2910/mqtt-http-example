@@ -1,0 +1,35 @@
+extends layout
+
+block content
+    h1= Detail
+    p Extension : #{Extension}
+    p Dimention : #{Dimension}
+    p Text String : #{TextString}
+
+
+    p QR-Code:
+    #qr(width=400, height=400)
+        if (Extension == 'svg')
+            #myProgress
+                #myBar
+
+            script.
+                move()
+
+            #im1(style='display:none')
+                img(src="/images/qr.svg")
+        else if (Extension == 'pdf' || Extension =='epl')
+            a(href="/download/"+Extension, onclick="move(); window.open(this.href); return false;")
+                button(type="button") Download
+            #myProgress
+                #myBar
+        else
+            #myProgress
+                #myBar
+
+            script.
+                move()
+
+            #im1(style='display:none')
+                img(src="/images/qr."+Extension)
+
