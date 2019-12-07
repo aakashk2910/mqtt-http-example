@@ -3,8 +3,7 @@ pipeline {
   stages {
     stage('Unit and Coverage Test') {
       steps {
-        sh '''cd $WORKSPACE
-nyc --reporter=html --reporter=text mocha'''
+        sh 'run test'
       }
     }
 
