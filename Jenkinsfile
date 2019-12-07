@@ -3,7 +3,9 @@ pipeline {
   stages {
     stage('Unit and Coverage Test') {
       steps {
-        sh '/usr/local/bin/npm run test'
+        sh '''cd /Users/aakash/Seminar/Application/mqtt-http
+
+/usr/local/bin/npm run test'''
       }
     }
 
