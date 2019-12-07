@@ -3,7 +3,9 @@ pipeline {
   stages {
     stage('Unit and Coverage Test') {
       steps {
-        sh '/Users/aakash/Seminar/Application/mqtt-http/npm run test'
+        sh '''cd $WORKSPACE
+npm install
+npm run test-jenkins'''
       }
     }
 
