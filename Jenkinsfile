@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Unit and Coverage Test') {
       steps {
-        sh 'npm run test'
+        sh 'nyc --reporter=html --reporter=text mocha || true'
       }
     }
 
