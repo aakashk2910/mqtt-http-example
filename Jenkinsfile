@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Unit and Coverage Test') {
       steps {
-        sh '''cd /Users/aakash/Seminar/Application/mqtt-http/
+        sh '''npm install npm
 
 npm run test'''
       }
