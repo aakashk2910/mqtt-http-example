@@ -8,12 +8,6 @@ npm cache clean --force'''
         sh '''export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 npm i'''
       }
-
-      post {
-              always {
-                  archiveArtifacts artifacts: 'build/libs/**/*.jar', fingerprint: true
-              }
-          }
     }
 
     stage('Unit and Coverage Test') {
@@ -21,13 +15,6 @@ npm i'''
         sh '''export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 npm run coverageTest'''
       }
-
-      post {
-              always {
-                  archiveArtifacts artifacts: 'build/libs/**/*.jar', fingerprint: true
-                  junit 'build/reports/**/*.xml'
-              }
-          }
     }
 
     stage('Performance Test') {
