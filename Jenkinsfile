@@ -5,7 +5,8 @@ pipeline {
       steps {
         sh '''export PATH=/usr/local/bin
 npm install'''
-        sh 'npm install nyc'
+        sh '''export PATH=/usr/local/bin
+npm install nyc'''
       }
     }
 
@@ -13,13 +14,15 @@ npm install'''
       parallel {
         stage('Unit Test') {
           steps {
-            sh 'npm run unitTest'
+            sh '''export PATH=/usr/local/bin
+npm run unitTest'''
           }
         }
 
         stage('Coverage Test') {
           steps {
-            sh 'npm run coverageTest'
+            sh '''export PATH=/usr/local/bin
+npm run coverageTest'''
           }
         }
 
