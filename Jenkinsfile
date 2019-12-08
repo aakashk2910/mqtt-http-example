@@ -6,7 +6,7 @@ pipeline {
         sh '''export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 npm i
 chmod -R a+rwx ./node_modules '''
-        sh '''export PATH=/usr/local/bin
+        sh '''export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 npm run coverage'''
       }
     }
