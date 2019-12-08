@@ -15,7 +15,6 @@ npm install nyc'''
     stage('Unit Test') {
       steps {
         sh '''export PATH=/usr/local/bin
-npm i mocha
 npm run unitTest'''
       }
     }
