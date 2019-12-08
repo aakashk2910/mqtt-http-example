@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Unit and Coverage Test') {
       steps {
-        sh 'npm i'
+        sh '/usr/local/share/npm/bin/npm i'
       }
     }
 
