@@ -1,0 +1,15 @@
+extends layout
+
+
+block content
+    h2 MQTT data from testtopic/#
+    h2 No of messages: #{noOfMessages}
+    table
+        tbody
+            each chunk in listChunks.reverse()
+                tr
+                        td= chunk
+                script(type='text/javascript').
+                    setTimeout(function () {
+                    location.reload();
+                    }, 3000);
