@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('Unit and Coverage Test') {
       steps {
-        sh 'brew update'
+        sh '''chsh -s $(which zsh)
+brew update'''
       }
     }
 
