@@ -13,9 +13,21 @@ npm install nyc'''
     }
 
     stage('Unit Test') {
-      steps {
-        sh '''export PATH=/usr/local/bin
+      parallel {
+        stage('Unit Test') {
+          steps {
+            sh '''export PATH=/usr/local/bin
 npm run unitTest'''
+          }
+        }
+
+        stage('Coverage Test') {
+          steps {
+            sh '''export PATH=/usr/local/bin
+npm run coverageTest'''
+          }
+        }
+
       }
     }
 
