@@ -11,22 +11,9 @@ npm i'''
     }
 
     stage('Unit and Coverage Test') {
-      parallel {
-        stage('Unit') {
-          agent any
-          steps {
-            sh '''export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-npm run unitTest'''
-          }
-        }
-
-        stage('Coverage Test') {
-          steps {
-            sh '''export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+      steps {
+        sh '''export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 npm run coverageTest'''
-          }
-        }
-
       }
     }
 
