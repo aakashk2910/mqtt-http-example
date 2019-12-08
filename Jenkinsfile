@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker {
       image 'node:12.13.1'
-      args '--build-arg JMETER_VERSION=${JMETER_VERSION} -t "justb4/jmeter:${JMETER_VERSION}" '
+      args 'JMETER_VERSION=5.1.1 -t "justb4/jmeter:5.1.1" '
     }
 
   }
