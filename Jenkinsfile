@@ -4,6 +4,9 @@ pipeline {
     stage('Unit Test') {
       steps {
         sh '''export PATH=/usr/local/bin
+npm i
+'''
+        sh '''export PATH=/usr/local/bin
 npm run coverage'''
       }
     }
