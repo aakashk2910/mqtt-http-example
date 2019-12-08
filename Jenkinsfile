@@ -1,10 +1,5 @@
 pipeline {
-  agent {
-    node {
-      label 'default-nodejs'
-    }
-
-  }
+  agent any
   stages {
     stage('Unit and Coverage Test') {
       steps {
