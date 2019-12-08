@@ -2,12 +2,6 @@ pipeline {
   agent any
   stages {
     stage('Install') {
-      post {
-        always {
-          archiveArtifacts(artifacts: 'build/libs/**/*.jar', fingerprint: true)
-        }
-
-      }
       steps {
         sh '''export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 npm cache clean --force'''
