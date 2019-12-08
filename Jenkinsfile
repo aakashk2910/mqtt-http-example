@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('Unit and Coverage Test') {
       steps {
-        sh 'npm install'
+        sh '''export PATH=$PATH:/usr/local/bin/npm
+npm install'''
       }
     }
 
