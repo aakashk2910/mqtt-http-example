@@ -1,20 +1,41 @@
 pipeline {
   agent any
   stages {
-    stage('Unit Test') {
+    stage('Install') {
       steps {
         sh '''export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-npm i
-chmod -R a+rwx ./node_modules '''
+npm cache clean --force'''
         sh '''export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-npm run coverage'''
+npm i'''
       }
     }
 
-    stage('ptest') {
-      agent any
+    stage('Unit and Coverage Test') {
+      parallel {
+        stage('Unit') {
+          agent any
+          steps {
+            sh '''export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+chmod -R a+rwx ./node_modules '''
+            sh '''export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+npm run unitTest'''
+          }
+        }
+
+        stage('Coverage Test') {
+          steps {
+            sh '''export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+npm run coverageTest'''
+          }
+        }
+
+      }
+    }
+
+    stage('Performance Test') {
       steps {
-        sh 'meter -jjmeter.save.saveservice.output_format=xml -n -t /usr/local/Cellar/jmeter/5.2.1/bin/preport.jmx -l /usr/local/Cellar/jmeter/5.2.1/bin/outputReport.jtl'
+        sh '''/usr/local/Cellar/jmeter/5.2.1/bin/jmeter -jjmeter.save.saveservice.output_format=xml -n -t /usr/local/Cellar/jmeter/5.2.1/bin/preport.jmx -l /usr/local/Cellar/jmeter/5.2.1/bin/outputReport.jtl
+'''
       }
     }
 
