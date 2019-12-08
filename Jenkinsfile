@@ -11,13 +11,6 @@ npm i'''
     }
 
     stage('Unit and Coverage Test') {
-      post {
-        always {
-          archiveArtifacts(artifacts: 'build/libs/**/*.jar', fingerprint: true)
-          junit 'build/reports/**/*.xml'
-        }
-
-      }
       steps {
         sh '''export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 npm run coverageTest'''
