@@ -6,9 +6,9 @@ pipeline {
 
   }
   stages {
-    stage('Unit and Coverage Test') {
+    stage('Install') {
       steps {
-        sh 'npm run test'
+        sh 'npm i'
       }
     }
 
