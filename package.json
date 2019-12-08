@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "coverageTest": "nyc --reporter=html --reporter=text mocha Test/appTest.js'",
+    "coverageTest": "nyc --reporter=html --reporter=text mocha 'Test/appTest.js'",
     "unitTest": "nyc mocha 'Test/appTest.js'"
   },
   "dependencies": {
