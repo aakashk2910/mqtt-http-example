@@ -1,11 +1,5 @@
 pipeline {
-  agent {
-    docker {
-      image 'node:12.13.1'
-      args 'JMETER_VERSION=5.1.1 -t "justb4/jmeter:5.1.1" '
-    }
-
-  }
+  agent any
   stages {
     stage('Install') {
       steps {
