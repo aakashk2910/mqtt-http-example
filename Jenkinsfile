@@ -12,7 +12,7 @@ npm install nyc'''
       }
     }
 
-    stage('Unit Test') {
+    stage('Unit and Coverage Test') {
       parallel {
         stage('Unit Test') {
           steps {
