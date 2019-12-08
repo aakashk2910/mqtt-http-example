@@ -1,17 +1,6 @@
 pipeline {
   agent any
   stages {
-    stage('Install') {
-      steps {
-        sh '''export PATH=/usr/local/bin
-npm cache clean --force'''
-        sh '''export PATH=/usr/local/bin
-npm install'''
-        sh '''export PATH=/usr/local/bin
-npm install nyc'''
-      }
-    }
-
     stage('Unit Test') {
       steps {
         sh '''export PATH=/usr/local/bin
