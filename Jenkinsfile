@@ -24,5 +24,11 @@ npm run coverageTest'''
       }
     }
 
+    stage('Visualize') {
+      steps {
+        perfReport(sourceDataFiles: '/usr/local/Cellar/jmeter/5.2.1/bin/outputReport.jtl', graphType: 'bar', modePerformancePerTestCase: true, modeThroughput: true, modeOfThreshold: true, modeEvaluation: true)
+      }
+    }
+
   }
 }
