@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Install') {
       steps {
-        sh 'npm i'
+        sh 'sudo npm i'
         sh 'npm install nyc'
       }
     }
