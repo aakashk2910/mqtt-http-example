@@ -1,9 +1,14 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'node:12.13.1'
+    }
+
+  }
   stages {
     stage('Unit and Coverage Test') {
       steps {
-        sh 'brew update'
+        sh 'npm run test'
       }
     }
 
