@@ -1,17 +1,14 @@
 pipeline {
   agent {
-    node {
-      label 'default-nodejs'
+    docker {
+      image 'node:12.13.1'
     }
 
   }
   stages {
     stage('Unit and Coverage Test') {
       steps {
-        script {
-          npm install
-        }
-
+        sh 'npm run test'
       }
     }
 
