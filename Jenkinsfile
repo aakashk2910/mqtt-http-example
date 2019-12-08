@@ -30,5 +30,18 @@ npm run coverageTest'''
       }
     }
 
+    stage('V2') {
+        steps {
+            publishHTML (target: [
+                  allowMissing: false,
+                  alwaysLinkToLastBuild: false,
+                  keepAll: true,
+                  reportDir: 'coverage',
+                  reportFiles: 'index.html',
+                  reportName: "RCov Report"
+                ])
+        }
+    }
+
   }
 }
