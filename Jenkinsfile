@@ -2,6 +2,7 @@ pipeline {
   agent {
     docker {
       image 'node:12.13.1'
+      args '--build-arg JMETER_VERSION=${JMETER_VERSION} -t "justb4/jmeter:${JMETER_VERSION}" '
     }
 
   }
@@ -33,9 +34,7 @@ pipeline {
     stage('ptest') {
       agent any
       steps {
-        sh '''git clone https://github.com/justb4/docker-jmeter.git
-cd docker-jmeter
-./build.sh'''
+        sh 'meter -jjmeter.save.saveservice.output_format=xml -n -t /usr/local/Cellar/jmeter/5.2.1/bin/preport.jmx -l /usr/local/Cellar/jmeter/5.2.1/bin/outputReport.jtl'
       }
     }
 
