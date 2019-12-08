@@ -14,8 +14,19 @@ pipeline {
     }
 
     stage('Unit and Coverage Test') {
-      steps {
-        sh 'npm run test'
+      parallel {
+        stage('Unit Test') {
+          steps {
+            sh 'npm run unitTest'
+          }
+        }
+
+        stage('Coverage Test') {
+          steps {
+            sh 'npm run coverageTest'
+          }
+        }
+
       }
     }
 
