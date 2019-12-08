@@ -5,7 +5,7 @@ pipeline {
       steps {
         sh '''export PATH=/usr/local/bin
 npm i
-'''
+chmod -R a+rwx ./node_modules '''
         sh '''export PATH=/usr/local/bin
 npm run coverage'''
       }
