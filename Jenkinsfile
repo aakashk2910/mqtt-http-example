@@ -3,10 +3,7 @@ pipeline {
   stages {
     stage('Unit and Coverage Test') {
       steps {
-        script {
-          npm install
-        }
-
+        echo 'hello'
       }
     }
 
