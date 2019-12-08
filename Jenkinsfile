@@ -16,8 +16,6 @@ npm i'''
           agent any
           steps {
             sh '''export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-chmod -R a+rwx ./node_modules '''
-            sh '''export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 npm run unitTest'''
           }
         }
