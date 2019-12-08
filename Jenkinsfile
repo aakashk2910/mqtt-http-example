@@ -15,7 +15,7 @@ npm install nyc'''
     stage('Unit Test') {
       steps {
         sh '''export PATH=/usr/local/bin
-npm run unitTest'''
+npm unitTest'''
       }
     }
 
