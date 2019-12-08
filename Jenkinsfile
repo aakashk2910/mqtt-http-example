@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Unit and Coverage Test') {
       steps {
-        sh 'cat package.json'
+        sh 'npm i'
       }
     }
 
