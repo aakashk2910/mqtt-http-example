@@ -46,7 +46,7 @@ npm run coverageTest'''
     stage('Start Application') {
             steps {
                sh '''export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-                npm start'''
+                npm run start'''
             }
         }
 
