@@ -13,7 +13,7 @@ var messageVar = [];
 client.on('connect', function () {
     client.subscribe('testtopic/#', function (err) {
         if (!err) {
-            client.publish('testtopic/aa', 'Aakash Kamble')
+            client.publish('testtopic/aa', 'Aakash Kamble' + Date.now())
         }
     })
 });
@@ -25,6 +25,8 @@ client.on('message', function (topic, message) {
 });
 
 router.get('/mqtt', function(req, res, next) {
+
+    client.publish('testtopic/aa', 'Aakash Kamble' + Date.now())
 
     var noOfMessages = messageVar.length;
 
@@ -58,6 +60,10 @@ router.get('/api/:ext/:dm/:textString', function (req, res, next) {
 
 router.get('/download/:ext', function (req, res, next) {
     res.download('public/images/qr.'+req.params.ext, 'qr.'+req.params.ext);
+});
+
+router.get('/coverage', function(req, res, next) {
+    res.sendfile('../coverage/index.html');
 });
 
 module.exports = router;

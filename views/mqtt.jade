@@ -6,7 +6,7 @@ block content
     h2 No of messages: #{noOfMessages}
     table
         tbody
-            each chunk in listChunks.reverse()
+            each chunk in listChunks
                 tr
                         td= chunk
                 script(type='text/javascript').
