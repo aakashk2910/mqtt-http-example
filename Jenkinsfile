@@ -28,12 +28,10 @@ npm run coverageTest'''
       steps {
         perfReport(sourceDataFiles: '/usr/local/Cellar/jmeter/5.2.1/bin/outputReport.jtl', graphType: 'bar', modePerformancePerTestCase: true, modeThroughput: true, modeOfThreshold: true, modeEvaluation: true)
         publishHTML([
-                                    allowMissing: false,
-                                    alwaysLinkToLastBuild: false,
                                     keepAll: true,
                                     reportDir: '/usr/local/Cellar/jmeter/5.2.1/bin',
                                     reportFiles: '/usr/local/Cellar/jmeter/5.2.1/bin/outputReport.jtl',
-                                    reportName: "P Report"
+                                    reportName: "Performance Report"
                                   ])
       }
     }
@@ -46,7 +44,7 @@ npm run coverageTest'''
                             keepAll: true,
                             reportDir: 'coverage',
                             reportFiles: 'index.html',
-                            reportName: "RCov Report"
+                            reportName: "Coverage Report"
                           ])
         }
       }
