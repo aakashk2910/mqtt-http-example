@@ -23,7 +23,7 @@ describe('testApp', function(){
     describe('addNumbers()', function(){
         it('addNumbers should be above 5', function(){
             //let result = app.addNumbers(5,5);
-            assert.isAbove(addNumbersResult, 5);
+            assert.isAbove(addNumbersResult, 12);
         });
 
         it('addNumbers should return type number', function(){
