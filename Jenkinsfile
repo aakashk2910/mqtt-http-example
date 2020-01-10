@@ -28,30 +28,17 @@ bzt -report /usr/local/Cellar/jmeter/5.2.1/bin/preport.jmx'''
 
     stage('Visualize') {
       steps {
-        perfReport(sourceDataFiles: '/usr/local/Cellar/jmeter/5.2.1/bin/outputReport.jtl', graphType: 'bar', modePerformancePerTestCase: true, modeThroughput: true, modeOfThreshold: true, modeEvaluation: true)
-        publishHTML([
-                                    allowMissing: false,
-                                    alwaysLinkToLastBuild: false,
-                                    keepAll: true,
-                                    reportDir: '/usr/local/Cellar/jmeter/5.2.1/bin',
-                                    reportFiles: '/usr/local/Cellar/jmeter/5.2.1/bin/outputReport.jtl',
-                                    reportName: "Performance Report"
-                                  ])
+              publishHTML([
+                                  allowMissing: false,
+                                  alwaysLinkToLastBuild: false,
+                                  keepAll: true,
+                                  reportDir: 'coverage',
+                                  reportFiles: 'index.html',
+                                  reportName: "Coverage Report"
+                                ])
+              }                ])
       }
     }
-
-    stage('V2') {
-      steps {
-        publishHTML([
-                            allowMissing: false,
-                            alwaysLinkToLastBuild: false,
-                            keepAll: true,
-                            reportDir: 'coverage',
-                            reportFiles: 'index.html',
-                            reportName: "Coverage Report"
-                          ])
-        }
-      }
 
     stage('Start Application') {
             steps {
