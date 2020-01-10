@@ -6,6 +6,8 @@ const testApp = require('../functionsToTest');
 // Results
 sayHelloResult = testApp.sayHello();
 addNumbersResult = testApp.addNumbers(5,5);
+multiplyNumbersResult = testApp.multiplyNumbers(5,5);
+divideNumbersResult = testApp.divideNumbers(10,2);
 
 describe('testApp', function(){
     describe('sayHello()', function(){
@@ -23,12 +25,66 @@ describe('testApp', function(){
     describe('addNumbers()', function(){
         it('addNumbers should be above 5', function(){
             //let result = app.addNumbers(5,5);
-            assert.isAbove(addNumbersResult, 12);
+            assert.isAbove(addNumbersResult, 5);
+        });
+
+        it('addNumbers should be above 5', function(){
+            //let result = app.addNumbers(5,5);
+            assert.equal(addNumbersResult, 10);
+        });
+
+        it('addNumbers should be above 5', function(){
+            //let result = app.addNumbers(5,5);
+            assert.isBelow(addNumbersResult, 12);
         });
 
         it('addNumbers should return type number', function(){
             //let result = app.addNumbers(5,5);
             assert.typeOf(addNumbersResult, 'number');
+        });
+    });
+
+    describe('multiplyNumbers()', function(){
+        it('multiplyNumbers should be above 5', function(){
+            //let result = app.addNumbers(5,5);
+            assert.isAbove(multiplyNumbersResult, 20);
+        });
+
+        it('multiplyNumbers should be above 5', function(){
+            //let result = app.addNumbers(5,5);
+            assert.equal(multiplyNumbersResult, 25);
+        });
+
+        it('multiplyNumbers should be above 5', function(){
+            //let result = app.addNumbers(5,5);
+            assert.isBelow(multiplyNumbersResult, 30);
+        });
+
+        it('multiplyNumbers should return type number', function(){
+            //let result = app.addNumbers(5,5);
+            assert.typeOf(multiplyNumbersResult, 'number');
+        });
+    });
+
+    describe('divideNumbers()', function(){
+        it('divideNumbers should be above 5', function(){
+            //let result = app.addNumbers(5,5);
+            assert.isAbove(divideNumbersResult, 1);
+        });
+
+        it('divideNumbers should be above 5', function(){
+            //let result = app.addNumbers(5,5);
+            assert.equal(divideNumbersResult, 5);
+        });
+
+        it('divideNumbers should be above 5', function(){
+            //let result = app.addNumbers(5,5);
+            assert.isBelow(divideNumbersResult, 10);
+        });
+
+        it('divideNumbers should return type number', function(){
+            //let result = app.addNumbers(5,5);
+            assert.typeOf(divideNumbersResult, 'number');
         });
     });
 });
