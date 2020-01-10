@@ -21,7 +21,7 @@ npm run coverageTest'''
       steps {
         sh '''/usr/local/Cellar/jmeter/5.2.1/bin/jmeter -jjmeter.save.saveservice.output_format=xml -n -t /usr/local/Cellar/jmeter/5.2.1/bin/preport.jmx -l /usr/local/Cellar/jmeter/5.2.1/bin/outputReport.jtl
 '''
-        sh '''bzt -report /usr/local/Cellar/jmeter/5.2.1/bin/preport.jmx'''
+        sh '''export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin" bzt -report /usr/local/Cellar/jmeter/5.2.1/bin/preport.jmx'''
       }
     }
 
