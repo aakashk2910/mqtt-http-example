@@ -36,7 +36,6 @@ bzt -report /usr/local/Cellar/jmeter/5.2.1/bin/preport.jmx'''
                                   reportFiles: 'index.html',
                                   reportName: "Coverage Report"
                                 ])
-              }                ])
       }
     }
 
