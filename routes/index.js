@@ -30,8 +30,6 @@ router.get('/mqtt', function(req, res, next) {
 
     var noOfMessages = messageVar.length;
 
-
-
     res.render('mqtt', { listChunks: messageVar, noOfMessages:noOfMessages  });
 });
 

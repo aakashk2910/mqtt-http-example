@@ -28,6 +28,7 @@ bzt -report /usr/local/Cellar/jmeter/5.2.1/bin/preport.jmx'''
 
     stage('Visualize') {
       steps {
+          perfReport(sourceDataFiles: '/usr/local/Cellar/jmeter/5.2.1/bin/outputReport.jtl', graphType: 'bar', modePerformancePerTestCase: true, modeThroughput: true, modeOfThreshold: true, modeEvaluation: true)
               publishHTML([
                                   allowMissing: false,
                                   alwaysLinkToLastBuild: false,
