@@ -74,7 +74,7 @@ describe('testApp', function(){
 
         it('divideNumbers should be above 5', function(){
             //let result = app.addNumbers(5,5);
-            assert.equal(divideNumbersResult, 5);
+            assert.equal(divideNumbersResult, 3);
         });
 
         it('divideNumbers should be above 5', function(){
