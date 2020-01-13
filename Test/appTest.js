@@ -28,12 +28,12 @@ describe('testApp', function(){
             assert.isAbove(addNumbersResult, 5);
         });
 
-        it('addNumbers should be above 5', function(){
+        it('addNumbers should be equal to 10', function(){
             //let result = app.addNumbers(5,5);
             assert.equal(addNumbersResult, 10);
         });
 
-        it('addNumbers should be above 5', function(){
+        it('addNumbers should be below 12', function(){
             //let result = app.addNumbers(5,5);
             assert.isBelow(addNumbersResult, 12);
         });
@@ -45,17 +45,17 @@ describe('testApp', function(){
     });
 
     describe('multiplyNumbers()', function(){
-        it('multiplyNumbers should be above 5', function(){
+        it('multiplyNumbers should be above 20', function(){
             //let result = app.addNumbers(5,5);
             assert.isAbove(multiplyNumbersResult, 20);
         });
 
-        it('multiplyNumbers should be above 5', function(){
+        it('multiplyNumbers should be equal to 25', function(){
             //let result = app.addNumbers(5,5);
             assert.equal(multiplyNumbersResult, 25);
         });
 
-        it('multiplyNumbers should be above 5', function(){
+        it('multiplyNumbers should be below 30', function(){
             //let result = app.addNumbers(5,5);
             assert.isBelow(multiplyNumbersResult, 30);
         });
@@ -67,17 +67,17 @@ describe('testApp', function(){
     });
 
     describe('divideNumbers()', function(){
-        it('divideNumbers should be above 5', function(){
+        it('divideNumbers should be above 1', function(){
             //let result = app.addNumbers(5,5);
             assert.isAbove(divideNumbersResult, 1);
         });
 
-        it('divideNumbers should be above 5', function(){
+        it('divideNumbers should be equal to 5', function(){
             //let result = app.addNumbers(5,5);
-            assert.equal(divideNumbersResult, 3);
+            assert.equal(divideNumbersResult, 5);
         });
 
-        it('divideNumbers should be above 5', function(){
+        it('divideNumbers should be below 10', function(){
             //let result = app.addNumbers(5,5);
             assert.isBelow(divideNumbersResult, 10);
         });
